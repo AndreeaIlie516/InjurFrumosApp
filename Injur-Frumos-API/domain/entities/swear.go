@@ -4,8 +4,8 @@ import "gorm.io/gorm"
 
 type Swear struct {
 	gorm.Model
-	RomanianSwear                 string `gorm:"column:romanian_name;unique;not null" json:"" validate:"required,romanianSwearValidator"`
-	EnglishWordByWordTranslations string `gorm:"column:english_word_by_word_translation;not null" json:"english_word_by_word_translation" validate:"required,englishTranslationValidator"`
+	RomanianSwear                 string `gorm:"column:romanian_name;unique;not null" json:"" validate:"required"`
+	EnglishWordByWordTranslations string `gorm:"column:english_word_by_word_translation;not null" json:"english_word_by_word_translation" validate:"required"`
 	ActualMeaning                 string `gorm:"column:actual_meaning" json:"actual_meaning" validate:"required,max=256"`
 	ContextualExample             string `gorm:"column:contextual_example" json:"contextual_example" validate:"required,max=256"`
 	TypeID                        uint   `gorm:"column:type_id;not null" json:"type_id" validate:"required,number"`
